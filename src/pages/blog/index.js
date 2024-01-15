@@ -49,7 +49,7 @@ export default function Index() {
       <ul className="flex flex-wrap w-full gap-5 justify-center">
         {data.map((item) => {
           return (
-            <Link href={`/blog/${item.id}`} className="flex flex-col p-4 gap-4 rounded-xl border-[1px] w-[30%] h-[476px] border-[#E8E8EA]">
+            <Link key={crypto.randomUUID()} href={`/blog/${item.id}`} className="flex flex-col p-4 gap-4 rounded-xl border-[1px] w-[30%] h-[476px] border-[#E8E8EA]">
               <div
                 className="w-full h-[45%] bg-cover bg-center"
                 style={{ backgroundImage: `url(${!item.cover_image ? './noImage.jpg' :item.cover_image})` }}

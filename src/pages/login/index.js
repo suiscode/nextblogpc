@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
 
-function index() {
+function Index() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth)
@@ -56,4 +56,4 @@ function index() {
   )
 }
 
-export default index
+export default Index

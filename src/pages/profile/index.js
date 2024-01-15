@@ -5,7 +5,7 @@ import { auth } from '@/firebase/config'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useRouter } from 'next/router'
 
-function index() {
+function Index() {
   
   const router = useRouter()
   const [user] = useAuthState(auth)
@@ -23,4 +23,4 @@ function index() {
   )
 }
 
-export default index
+export default Index

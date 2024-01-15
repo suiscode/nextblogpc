@@ -6,7 +6,7 @@ import {useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth'
 import {auth} from '@/firebase/config'
 import { useRouter } from "next/router";
 
-function page() {
+function Page() {
   const router = useRouter()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -51,4 +51,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

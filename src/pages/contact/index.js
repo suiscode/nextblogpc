@@ -7,7 +7,7 @@ export const jakartasans = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-function index() {
+function Index() {
 
   const [letter,setLetter] = useState()
 
@@ -73,4 +73,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;
