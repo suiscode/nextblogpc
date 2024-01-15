@@ -16,7 +16,6 @@ function index() {
     const handleSignIn =async()=>{
         try{
             const res = await signInWithEmailAndPassword(email,password)
-            console.log(res.user.uid);
             setEmail('')
             setPassword('')
         } catch(e){

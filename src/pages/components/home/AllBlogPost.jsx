@@ -43,9 +43,7 @@ function AllBlogPost() {
     setCount((prev) => prev + 3);
   };
 
-  useEffect(() => {
-    console.log(searchTag);
-  }, [searchTag]);
+
 
   const filteredData = searchTag
     ? data.filter((item) => item.tag_list.includes(searchTag))

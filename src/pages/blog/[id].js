@@ -39,7 +39,6 @@ function Page() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
-  console.log(router.query.id, "id");
 
   useEffect(() => {
     if (router.query.id) {

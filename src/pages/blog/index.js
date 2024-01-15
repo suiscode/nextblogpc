@@ -9,7 +9,7 @@ import { auth } from '@/firebase/config';
 import { useRouter } from 'next/router';
 
 
-function index() {
+export default function Index() {
   const [count,setCount] = useState(9)
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -68,4 +68,3 @@ function index() {
   )
 }
 
-export default index

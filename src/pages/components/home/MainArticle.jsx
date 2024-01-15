@@ -21,7 +21,6 @@ function MainArticle() {
         setLoading(false);
       });
   }, []);
-  console.log(data);
 
   const handleIncrement = () => {
     if (newsIndex === 9) {

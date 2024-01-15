@@ -25,7 +25,6 @@ function index() {
     subject.current.value=''
     message.current.value=''
   }
-  console.log(letter);
 
 
   return (

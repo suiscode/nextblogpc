@@ -13,7 +13,6 @@ function index() {
   if(!user) {
     router.push('/login')
   }
-  console.log(user);
 
   return (
     <Layout>

@@ -16,7 +16,6 @@ function page() {
   const handleSignUp= async ()=>{
     try{
       const res = await createUserWithEmailAndPassword(email, password)
-    console.log(res);
     setEmail('')
     setPassword('')
     router.push('/login')
