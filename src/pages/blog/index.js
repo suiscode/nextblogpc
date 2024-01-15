@@ -1,8 +1,13 @@
+'use client'
 import React, { useEffect, useState } from 'react'
 import Layout from '../components/layout/Layout'
 import axios from 'axios';
 import ArticleTitle from '../components/home/ArticleTitle';
 import Link from 'next/link';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '@/firebase/config';
+import { useRouter } from 'next/router';
+
 
 function index() {
   const [count,setCount] = useState(9)
@@ -10,6 +15,12 @@ function index() {
   const [loading, setLoading] = useState(true);
   const [loadMore, setLoadMore] = useState(false);
   const url = `https://dev.to/api/articles?state=fresh&per_page=${count}`;
+
+  const [user] = useAuthState(auth)
+  const router = useRouter()
+  if(!user) {
+    router.push('/login')
+  }
 
 
   useEffect(() => {

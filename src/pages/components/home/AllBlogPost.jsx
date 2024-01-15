@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import AllBlogHeader from "./AllBlogHeader";
 import ArticleTitle from "./ArticleTitle";
+import Link from "next/link";
 
 function AllBlogPost() {
   const [count, setCount] = useState(9);
@@ -56,7 +57,7 @@ function AllBlogPost() {
       <AllBlogHeader data={tagsData} setSearchTag={setSearchTag} searchTag={searchTag}/>
       <ul className="flex web:flex-wrap web:flex-row flex-col w-full gap-5 justify-center">
         {filteredData.map((item) => (
-          <li
+          <Link href={`/blog/${item.id}`}
             key={item.id}
             className="flex flex-col p-4 gap-4 rounded-xl border-[1px] web:w-[30%] w-full h-[476px] border-[#E8E8EA]"
           >
@@ -75,7 +76,7 @@ function AllBlogPost() {
               tagBg={"bg-[#4b6bfb]"}
               bgOpacity={"bg-opacity-5"}
             />
-          </li>
+          </Link>
         ))}
       </ul>
       <button

@@ -55,7 +55,7 @@ function MainArticle() {
             {data[newsIndex].tags === "" ? (
               ""
             ) : (
-              <ul className="flex gap-2">
+              <ul className="flex gap-2 flex-wrap">
                 {data[newsIndex].tags.split(",").map((item) => (
                   <li
                     key={crypto.randomUUID()}

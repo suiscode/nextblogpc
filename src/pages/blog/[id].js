@@ -4,10 +4,30 @@ import Layout from "../components/layout/Layout";
 import axios from "axios";
 import Image from "next/image";
 import { Source_Serif_4 } from "next/font/google";
+import { Metadata } from "next";
 
 
 const sourceserif = Source_Serif_4({ subsets: ["latin"] });
 
+export async function generateMetadata({ params }) {
+  const url = `https://dev.to/api/articles/${params.id}`;
+
+  try {
+    const response = await axios.get(url);
+    const article = response.data;
+
+    return {
+      title: article.title,
+      description: article.description,
+    };
+  } catch (error) {
+    console.error('Error fetching article:', error);
+    return {
+      title: 'Error',
+      description: 'There was an error fetching the article.',
+    };
+  }
+}
 
 function Page() {
 
@@ -37,6 +57,7 @@ function Page() {
         });
     }
   }, [router.query.id]);
+
 
 
   return <Layout>{loading ? <h1>Loading...</h1> :
